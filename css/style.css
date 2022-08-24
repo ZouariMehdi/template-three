@@ -3,49 +3,53 @@
 .main{
     width: fit-content;
     margin: auto;
-    padding: 5px 10px;
-    border: 1px solid black;
+    padding: 10px 40px;
+    border: 3px solid black;
     font-weight: bold;
     position: relative;
     margin: 50px auto;
+    font-size: 30px;
+    transition: 0.5s ease;
+z-index: 999;
 }
 .main:hover{
-    transition-delay: 1s;
+    transition-delay: 0.7s;
     color: white;
+    border: 3px solid white;
 }
 .main::before{
     content: "";
     position: absolute;
-    left: -20%;
+    left: -40%;
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--main-color);
-    height: 10px;
-    width: 10px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     z-index: -1;
 }
 .main::after{
     content: "";
     position: absolute;
-    right:-20%;
+    right:-40%;
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--main-color);
-    height: 10px;
-    width: 10px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     z-index: -1;
 }
 .main:hover::after{
-    animation: right 1s linear forwards;
+    animation: right 1s ease forwards;
 }
 .main:hover::before{
-    animation:  left 1s linear forwards;
+    animation:  left 1s ease forwards;
 }
 @keyframes right {
     0%{
-        right:-20%;
+        right:-40%;
     }
     50%{
         right: 0;
@@ -62,7 +66,7 @@
 }
 @keyframes left {
     0%{
-        left:-20%;
+        left:-40%;
     }
     50%{
         left: 0;
@@ -88,7 +92,6 @@ html{
 }
 *{
     box-sizing: border-box;
-    /* /* background-color: rgba(69, 205, 69, 0.196); */
     /* outline: 1px dashed black;  */
 }
 a{
@@ -837,6 +840,7 @@ background-color: rgb(231, 231, 231);
    align-items: center;
     gap: 40px;
     margin: 40px 0px;
+    justify-content: center;
 }
 .work  .row .col .info h3{
     font-weight: bold;
@@ -853,3 +857,315 @@ margin-bottom: 10px;
     width: 100px;
 }
 /* end how it works */
+/* start events  */
+.events .container{
+    display: flex;
+    gap: 40px;
+    text-align: center;
+}
+.events .container .info .time{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.events .container .info .time .col{
+    padding: 5px 10px;
+    border: 1px solid gray;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.events .info .col p:first-child{
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--main-color);
+    position: relative;
+    margin: 0;
+}
+.events .info .col p:first-child::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -30%;
+    width: 170%;
+    height: 1px;
+    background-color: gray;
+}
+.events .info .col p:last-child{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: 600;
+   color: black;
+   margin: 0;
+}
+.events .info > h2{
+    font-weight: bold;
+    font-size: 30px;
+}
+.events .info > p{
+    color: #777;
+}
+.events .container  img{
+    max-width: 100%;
+    width: 500px;
+}
+.events form{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.events form > div{
+    background-color: rgb(222, 222, 222);
+    padding: 50px;
+    border-radius: 50px;
+
+}
+.events form input{
+    padding: 20px 40px;
+    border-radius: 50px;
+    border: none;
+    
+}
+.events form input:first-child{
+    width: 400px;
+    
+}
+.events form input:last-child{
+    padding: 20px 40px;
+    margin-left: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* end events */
+/* start pricing plans */
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.pricing .container .col{
+    text-align: center;
+    margin-bottom: 100px;
+    margin-TOP: 100px;
+}
+.pricing .container .col > p:first-child{
+    font-size: 30px;
+    font-weight: bold;
+}
+.pricing .container .col > i{
+    font-size: 80px;
+    color: #1787e0;
+}
+.pricing .container .col > p:nth-child(3){
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0;
+    
+}
+.pricing .container .col > p:nth-child(4){
+    margin: 0;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.pricing .container .col  {
+   background-color: #ffffff;
+   box-shadow: 1px 1px 10px gray;
+
+}
+
+.pricing .container .col ul li {
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    position: relative;
+}
+.pricing .container .col ul li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #777;
+
+}
+.pricing .container .col ul li::before {
+    content: "✓";
+    color: var(--main-color);
+    font-weight: 900;
+    font-size: 20px;
+    margin-right: 10px;
+
+}
+.pricing .col button{
+    border: none;
+    padding: 15px 30px;
+    border: 3px solid var(--main-color);
+    border-radius: 10px;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 20px;
+    font-size: 20px;
+    background-color: white;
+}
+.pricing .col.active{
+    position: relative;
+    transform: translateY(-50px);
+}
+.pricing .col.active::after{
+    content: "";
+    
+    position: absolute;
+    right: 20px;
+    top: 0;
+    background-color: var(--main-color);
+    width: 40px;
+    height: 150px;
+
+}
+.pricing .col.active span{
+    color:rgb(255, 255, 255);
+    transform: rotate(-90deg);
+    position: absolute;
+    right: -10px;
+    font-size: 15px;
+    top: 40px;
+    font-weight: bold;
+    z-index: 20;
+}
+.pricing .col.active::before{
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 122px;
+    transform: rotate(45deg);
+    width: 40px;
+    height: 40px ;
+    background-color: rgb(255, 255, 255);
+    z-index: 5;
+}
+@media (max-width:1200px) {
+    .pricing .col.active{
+        transform: translateY(0);
+    }
+    
+}
+/* end pricing plans */
+/* start videos */
+.videos{
+    margin: 100px 0px;
+
+}
+.videos .container{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(176, 176, 176);
+    padding: 0;
+    position: relative;
+}
+.videos .container .videos-sec {
+    flex: 1;
+    background-color: rgb(194, 194, 194);
+}
+.videos .container .videos-sec > div{
+    background-color: white;
+    padding: 20px;
+    margin: 1px;
+
+    
+}
+.videos .container .videos-sec > div> p{
+    margin: 2px;
+    
+
+    
+}
+.videos .container  .img img{
+
+    width: 800px;
+    padding: 10px;
+}
+.videos .container  .img > p{
+
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 400px;
+    width: 90%;
+
+}
+.videos .container  .videos-sec span{
+   color: rgb(138, 138, 138);
+}
+
+/* end videos */
+/* start AWESOME STATS */
+.stats{
+    background-image: url(/imgs/businessman-pointing-his-presentation-futuristic-digital-screen.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.stats .container {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+.stats .container .col{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: white;
+    padding: 10px 70px;
+    position: relative;
+}
+.stats .container .col::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 0%;
+    background-color: var(--main-color);
+    left: 0;
+    bottom: 0;
+}
+.stats .container .col::after{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 0%;
+    background-color: var(--main-color);
+    right: 0;
+    top: 0;
+}
+.stats  .col:hover::after{
+    animation: top 1s ease;
+}
+.stats  .col:hover::before{
+    animation: top 1s ease;
+}
+@keyframes top {
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
+    
+}
+
+
+/* end awesome stats */
